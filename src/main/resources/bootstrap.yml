@@ -1,0 +1,21 @@
+server:
+  port: 8088      #client port
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8090/    # cloud server url
+      profile: default
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - refresh
+  endpoint:
+    health:
+      show-details: always
+health:
+  config:
+    enabled: true
